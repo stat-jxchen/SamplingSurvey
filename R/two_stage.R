@@ -9,6 +9,7 @@
 #' @param s2i a vector, the sample variance of each primary unit in sample.
 #' @param N a number, the number of primary units in population.
 #' @param alpha a number, the confidence level.
+#' @export
 two_stage_eqM_mean <- function(M, m, ybari, s2i, N = Inf, alpha = 0.05){
   n <- length(ybari)
   f1 <- n/N
@@ -40,6 +41,7 @@ two_stage_eqM_mean <- function(M, m, ybari, s2i, N = Inf, alpha = 0.05){
 #' @param s2i a vector, the sample variance of each primary unit in sample.
 #' @param N a number, the number of primary units in population.
 #' @param alpha a number, the confidence level.
+#' @export
 two_stage_eqM_total <- function(M, m, ybari, s2i, N, alpha = 0.05){
   n <- length(ybari)
   f1 <- n/N
@@ -67,9 +69,10 @@ two_stage_eqM_total <- function(M, m, ybari, s2i, N, alpha = 0.05){
 #'
 #' @param M a number, the number of secondary units in each primary unit in population.
 #' @param m a number, the number of secondary units in each primary unit in sample.
-#' @param s2i a vector, the sample proportion of each primary unit in sample.
+#' @param pj a vector, the sample proportion of each primary unit in sample.
 #' @param N a number, the number of primary units in population.
 #' @param alpha a number, the confidence level.
+#' @export
 two_stage_eqM_prop <- function(M, m, pj, N = Inf, alpha = 0.05){
   n <- length(pj)
   f1 <- n/N
@@ -101,6 +104,7 @@ two_stage_eqM_prop <- function(M, m, pj, N = Inf, alpha = 0.05){
 #' @param s2i a vector, the sample variance of each primary unit in sample.
 #' @param N a number, the number of primary units in population.
 #' @param alpha a number, the confidence level.
+#' @export
 two_stage_uneqM_total <- function(M0, M2i, mi, ybari, s2i, N, alpha = 0.05){
   n <- length(ybari)
   f1 <- n/N
@@ -135,7 +139,8 @@ two_stage_uneqM_total <- function(M0, M2i, mi, ybari, s2i, N, alpha = 0.05){
 #' @param s2i a vector, the sample variance of each primary unit in sample.
 #' @param N a number, the number of primary units in population.
 #' @param alpha a number, the confidence level.
-two_stage_uneqM_mean <- function(M0, M2i, mi, n, ybari, s2i, N = Inf,
+#' @export
+two_stage_uneqM_mean <- function(M0, M2i, mi, ybari, s2i, N = Inf,
                                   alpha = 0.05){
   n <- length(ybari)
   f1 <- n/N

@@ -11,11 +11,11 @@ two_stage_eqM_prop(M, m, pj, N = Inf, alpha = 0.05)
 
 \item{m}{a number, the number of secondary units in each primary unit in sample.}
 
+\item{pj}{a vector, the sample proportion of each primary unit in sample.}
+
 \item{N}{a number, the number of primary units in population.}
 
 \item{alpha}{a number, the confidence level.}
-
-\item{s2i}{a vector, the sample proportion of each primary unit in sample.}
 }
 \description{
 This function estimates the population proportion when two-stage sampling is used and

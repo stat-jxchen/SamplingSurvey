@@ -14,6 +14,7 @@
 #'    \tab \cr
 #'    \code{ci_right_bound} \tab upper confidence bound. \cr
 #' }
+#' @export
 #' @examples
 #' x <- rnorm(100)
 #' xbar <- mean(x)
@@ -49,6 +50,7 @@ conf_interval <- function(stat_obs,se_est,alpha = 0.05){
 #'    \code{ci_est} \tab a list contain absolute/relative error limit and the estimation of lower/upper confidence bound of the estimator.\cr
 #'    \tab \cr
 #' }
+#' @export
 srs_mean <- function(sample_data,N = Inf,alpha = 0.05){
   n <- length(sample_data) # sample size
   f <- n/N # sample ratio
@@ -81,6 +83,7 @@ srs_mean <- function(sample_data,N = Inf,alpha = 0.05){
 #'    \code{ci_est} \tab a list contain absolute/relative error limit and the estimation of lower/upper confidence bound of the estimator.\cr
 #'    \tab \cr
 #' }
+#' @export
 srs_total <- function(sample_data,N,alpha = 0.05){
   n <- length(sample_data)
   f <- n/N
@@ -116,6 +119,7 @@ srs_total <- function(sample_data,N,alpha = 0.05){
 #'    \code{ci_est} \tab a list contain absolute/relative error limit and the estimation of lower/upper confidence bound of the estimator.\cr
 #'    \tab \cr
 #' }
+#' @export
 srs_prop <- function(event_num,n,N = Inf,alpha = 0.05){
   f <- n/N
   if(f>1|f<0){
@@ -149,6 +153,7 @@ srs_prop <- function(event_num,n,N = Inf,alpha = 0.05){
 #'    \code{ci_est} \tab a list contain absolute/relative error limit and the estimation of lower/upper confidence bound of the estimator.\cr
 #'    \tab \cr
 #' }
+#' @export
 srs_num <- function(event_num,n,N,alpha = 0.05){
   f <- n/N
   if(f>1|f<0){
@@ -190,6 +195,7 @@ srs_num <- function(event_num,n,N,alpha = 0.05){
 #' @note If the total estimator precision is given, convert it to the mean estimator
 #' precision then use this function. This function will convert all forms of upper precision to
 #' upper limit of variance in calculation.
+#' @export
 srs_size_for_mean <- function(var_his,mean_his = NULL,N = Inf,
                               method,bound,alpha = 0.05){
 
@@ -236,6 +242,7 @@ srs_size_for_mean <- function(var_his,mean_his = NULL,N = Inf,
 #' @note If the number estimator precision is given, convert it to the proportion estimator
 #' precision then use this function. This function will convert all forms of upper precision to
 #' upper limit of variance in calculation.
+#' @export
 srs_size_for_prop <- function(p_his,N = Inf,method,bound,alpha = 0.05){
 
   quan <- qnorm(1-alpha/2)

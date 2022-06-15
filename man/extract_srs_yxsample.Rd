@@ -7,10 +7,10 @@
 extract_srs_yxsample(yxsample, yloc)
 }
 \arguments{
-\item{yloc}{a number, the location of y column in the dataframe.}
-
-\item{yxsamplea}{matrix or dataframe, which have two columns. One for y,
+\item{yxsample}{matrix or dataframe, which have two columns. One for y,
 another for x.}
+
+\item{yloc}{a number, the location of y column in the dataframe.}
 }
 \description{
 This function is an auxiliary function which can extract the sample mean, sample variance and sample covariance of the

@@ -11,7 +11,7 @@ stra_sample_generate(pop_data, n, wh = NULL)
 
 \item{n}{a number, the sample size one wishes.}
 
-\item{w}{a vector, the allocation proportion of each stratum sample. It will be normalized.
+\item{wh}{a vector, the allocation proportion of each stratum sample. It will be normalized.
 If it is not given, then the function will use proportional allocation.}
 }
 \description{

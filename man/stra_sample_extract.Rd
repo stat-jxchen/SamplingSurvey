@@ -9,7 +9,7 @@ stra_sample_extract(sample_data, type = "mean")
 \arguments{
 \item{sample_data}{a list, each element denotes a strata sample.}
 
-\item{type}{string, "mean" for \code{stra_srs_mean}，"prop" for \code{stra_srs_prop}.}
+\item{type}{string, "mean" for \code{stra_srs_mean}, "prop" for \code{stra_srs_prop}.}
 }
 \description{
 This function is an auxiliary function of \code{stra_srs_mean} and

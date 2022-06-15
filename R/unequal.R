@@ -7,6 +7,7 @@
 #' @param z a vector, the probability that the corresponding sample is selected
 #' in a single sampling.
 #' @param alpha a number, the confidence level.
+#' @export
 PPS_HH_total <- function(y, z, alpha = 0.05){
   n <- length(y)
   y_HH <- mean(y/z)
@@ -33,14 +34,15 @@ PPS_HH_total <- function(y, z, alpha = 0.05){
 #' in a single sampling.
 #' @param N a number, the size of population.
 #' @param alpha a number, the confidence level.
+#' @export
 PPS_HH_mean <- function(y,z,N,alpha = 0.05){
   n <- length(y)
   ybar_HH <- mean(y/z)/N
   ybar_HH_var_est <- var(y/z)/(N^2*(n-1))
   ybar_HH_se_est <- sqrt(ybar_HH_var_est)
   ybar_HH_ci_est <- conf_interval(ybar_HH,ybar_HH_se_est,alpha = alpha)
-  ybar_HH_ci_left <- ybar_HH_est$ci_left_bound
-  ybar_HH_ci_right <- ybar_HH_est$ci_right_bound
+  ybar_HH_ci_left <- ybar_HH$ci_left_bound
+  ybar_HH_ci_right <- ybar_HH$ci_right_bound
   result <- list(ybar_HH = ybar_HH,
                  ybar_HH_var_est = ybar_HH_var_est,
                  ybar_HH_se_est = ybar_HH_se_est,
@@ -58,6 +60,7 @@ PPS_HH_mean <- function(y,z,N,alpha = 0.05){
 #' @param PI a vector, the inclusion probability probability.
 #' @param PIM a matrix, the joint inclusion probability.
 #' @param alpha a number, the confidence level.
+#' @export
 PiPS_HT_total <- function(y,PI,PIM,alpha = 0.05){
   n <- length(y)
   y_HT <- sum(y/PI)
@@ -94,6 +97,7 @@ PiPS_HT_total <- function(y,PI,PIM,alpha = 0.05){
 #' @param PIM a matrix, the joint inclusion probability.
 #' @param N a number, the size of population.
 #' @param alpha a number, the confidence level.
+#' @export
 PiPS_HT_mean <- function(y,PI,PIM,N,alpha = 0.05){
   n <- length(y)
   ybar_HT <- sum(y/PI)/N
@@ -132,6 +136,7 @@ PiPS_HT_mean <- function(y,PI,PIM,N,alpha = 0.05){
 #' sample is selected.
 #' @param group_N a vector, the size of the group where the sample is selected.
 #' @param alpha a number, the confidence level.
+#' @export
 RHC_total <- function(ysample, yprob, group_prob_sum, group_N, alpha = 0.05){
   N <- sum(group_N)
   y_RHC <- sum(ysample/yprob*group_prob_sum)
@@ -160,6 +165,7 @@ RHC_total <- function(ysample, yprob, group_prob_sum, group_N, alpha = 0.05){
 #' sample is selected.
 #' @param group_N a vector, the size of the group where the sample is selected.
 #' @param alpha a number, the confidence level.
+#' @export
 RHC_mean <- function(ysample, yprob, group_prob_sum, group_N, alpha = 0.05){
   N <- sum(group_N)
   y_RHC <- sum(ysample/yprob*group_prob_sum)

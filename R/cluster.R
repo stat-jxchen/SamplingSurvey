@@ -10,6 +10,7 @@
 #' @param ybar a number, the mean of the sample sum of each cluster.
 #' @param n a number, the number of cluster in sample.
 #' @param alpha a number, the confidence level.
+#' @export
 cluster_eqM_mean <- function(M, s2b, N = Inf, ybari = NULL, ybar = NULL,
                             n = NULL, alpha = 0.05){
   if(!is.null(ybari)){
@@ -53,6 +54,7 @@ cluster_eqM_mean <- function(M, s2b, N = Inf, ybari = NULL, ybar = NULL,
 #' @param ybar a number, the mean of the sample sum of each cluster.
 #' @param n a number, the number of cluster in sample.
 #' @param alpha a number, the confidence level.
+#' @export
 cluster_eqM_total <- function(M, s2b, N, ybari = NULL, ybar = NULL,
                              n = NULL, alpha = 0.05){
   if(!is.null(ybari)){
@@ -97,6 +99,7 @@ cluster_eqM_total <- function(M, s2b, N, ybari = NULL, ybar = NULL,
 #' interval of the estimator, "ordinary" for normal approximation, and "equation"
 #' for equation method.
 #' @param alpha a number, the confidence level.
+#' @export
 cluster_prop <- function(m, p, N = Inf, ci_method = "ordinary", alpha = 0.05){
   n <- length(p)
   f <- n/N
@@ -148,6 +151,7 @@ cluster_prop <- function(m, p, N = Inf, ci_method = "ordinary", alpha = 0.05){
 #' interval of the estimator, "ordinary" for normal approximation, and "equation"
 #' for equation method.
 #' @param alpha a number, the confidence level.
+#' @export
 cluster_uneqM_total <- function(m, yi, N, M0 = NULL, method = "ratio",
                                 ci_method = "ordinary", alpha = 0.05){
   n <- length(yi)
@@ -208,6 +212,7 @@ cluster_uneqM_total <- function(m, yi, N, M0 = NULL, method = "ratio",
 #' interval of the estimator, "ordinary" for normal approximation, and "equation"
 #' for equation method.
 #' @param alpha a number, the confidence level.
+#' @export
 cluster_uneqM_mean <- function(m, yi, N, M0 = NULL, method = "ratio",
                                var_method = "mbar", ci_method = "ordinary",
                                alpha = 0.05){

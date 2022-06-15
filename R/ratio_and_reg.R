@@ -17,6 +17,7 @@
 #' for equation method.
 #' @param Xbar a number, the historical mean of the auxiliary variable x.
 #' @param alpha a number, the confidence level.
+#' @export
 ratio <- function(ybar, xbar, sy2, sx2, syx, n, N = Inf,
                        var_method = "xbar", ci_method = "ordinary",
                        Xbar = NULL, alpha = 0.05){
@@ -73,6 +74,7 @@ ratio <- function(ybar, xbar, sy2, sx2, syx, n, N = Inf,
 #' for equation method.
 #' @param Xbar a number, the historical mean of the auxiliary variable x.
 #' @param alpha a number, the confidence level.
+#' @export
 ratio_mean <- function(ybar, xbar, sy2, sx2, syx, n, Xbar, N = Inf,
                             ci_method = "ordinary", alpha = 0.05){
   ratio_est <- ybar/xbar
@@ -124,6 +126,7 @@ ratio_mean <- function(ybar, xbar, sy2, sx2, syx, n, Xbar, N = Inf,
 #' for equation method.
 #' @param Xbar a number, the historical mean of the auxiliary variable x.
 #' @param alpha a number, the confidence level.
+#' @export
 ratio_total <- function(ybar, xbar, sy2, sx2, syx, n, Xbar, N,
                             ci_method = "ordinary", alpha = 0.05){
 
@@ -153,6 +156,7 @@ ratio_total <- function(ybar, xbar, sy2, sx2, syx, n, Xbar, N,
 #'
 #' @param y_sample a vector, the sample of the main variable y.
 #' @param x_sample a vector, the sample of the auxiliary variable x.
+#' @export
 ratio_sample_extract <- function(y_sample,x_sample){
   xbar <- mean(x)
   ybar <- mean(y)
@@ -187,6 +191,7 @@ ratio_sample_extract <- function(y_sample,x_sample){
 #' If choose "const", then \code{beta0} need be given and be used.
 #' @param beta0 a number.
 #' @param alpha a number, the confidence level.
+#' @export
 reg_mean <- function(ybar, xbar, sy2, sx2, syx, n, Xbar, N = Inf,
                           beta_method = "reg_coef", beta0 = NULL,
                           alpha = 0.05){
@@ -231,6 +236,7 @@ reg_mean <- function(ybar, xbar, sy2, sx2, syx, n, Xbar, N = Inf,
 #' If choose "const", then \code{beta0} need be given and be used.
 #' @param beta0 a number.
 #' @param alpha a number, the confidence level.
+#' @export
 reg_total <- function(ybar, xbar, sy2, sx2, syx, n, Xbar, N,
                           beta_method = "reg_coef", beta0 = NULL,
                           alpha = 0.05){
@@ -270,6 +276,7 @@ reg_total <- function(ybar, xbar, sy2, sx2, syx, n, Xbar, N,
 #' @param alpha a number, the confidence level.
 #' @param stra_est logical, whether to calculate and output the estimated results
 #' of each strata.
+#' @export
 sep_ratio_mean <- function(Nh = NULL, Wh = NULL, N = NULL, nh, ybarh, xbarh,
                            sy2h, sx2h, syxh, Xbarh, alpha = 0.05,
                            stra_est = FALSE){
@@ -343,6 +350,7 @@ sep_ratio_mean <- function(Nh = NULL, Wh = NULL, N = NULL, nh, ybarh, xbarh,
 #' @param alpha a number, the confidence level.
 #' @param stra_est logical, whether to calculate and output the estimated results
 #' of each strata.
+#' @export
 sep_ratio_total <- function(Nh = NULL, Wh = NULL, N = NULL, nh, ybarh, xbarh,
                             sy2h, sx2h, syxh, Xbarh, alpha = 0.05,
                             stra_est = FALSE){
@@ -417,6 +425,7 @@ sep_ratio_total <- function(Nh = NULL, Wh = NULL, N = NULL, nh, ybarh, xbarh,
 #' @param syxh a vector, the strata sample covariance of y and x.
 #' @param Xbar a number, the historical mean of the auxiliary variable x.
 #' @param alpha a number, the confidence level.
+#' @export
 com_ratio_mean <- function(Nh = NULL, Wh = NULL, N = NULL, nh, ybarh, xbarh,
                            sy2h, sx2h, syxh, Xbar, alpha = 0.05){
   condition <- c(is.null(Nh),is.null(Wh),is.null(N))
@@ -469,6 +478,7 @@ com_ratio_mean <- function(Nh = NULL, Wh = NULL, N = NULL, nh, ybarh, xbarh,
 #' @param syxh a vector, the strata sample covariance of y and x.
 #' @param Xbar a number, the historical mean of the auxiliary variable x.
 #' @param alpha a number, the confidence level.
+#' @export
 com_ratio_total <- function(Nh = NULL, Wh = NULL, N = NULL, nh, ybarh, xbarh,
                             sy2h, sx2h, syxh, Xbar, alpha = 0.05){
   condition <- c(is.null(Nh),is.null(Wh),is.null(N))
@@ -526,10 +536,11 @@ com_ratio_total <- function(Nh = NULL, Wh = NULL, N = NULL, nh, ybarh, xbarh,
 #' If choose "const", then \code{beta0} need be given and be used.
 #' @param Xbarh a vector, the historical strata mean of the auxiliary variable x.
 #' @param alpha a number, the confidence level.
-#' @param beta0 a number or a vector. If the coefficient for each stata is the
+#' @param betah0 a number or a vector. If the coefficient for each stata is the
 #' same, then can just input a number.
 #' @param stra_est logical, whether to calculate and output the estimated results
 #' of each strata.
+#' @export
 sep_reg_mean <- function(Nh = NULL, Wh = NULL, N = NULL, nh, ybarh, xbarh,
                          sy2h, sx2h, syxh, Xbarh, beta_method = "reg_coef",
                          alpha = 0.05, betah0 = NULL, stra_est = FALSE){
@@ -611,10 +622,11 @@ sep_reg_mean <- function(Nh = NULL, Wh = NULL, N = NULL, nh, ybarh, xbarh,
 #' If choose "const", then \code{beta0} need be given and be used.
 #' @param Xbarh a vector, the historical strata mean of the auxiliary variable x.
 #' @param alpha a number, the confidence level.
-#' @param beta0 a number or a vector. If the coefficient for each stata is the
+#' @param betah0 a number or a vector. If the coefficient for each stata is the
 #' same, then can just input a number.
 #' @param stra_est logical, whether to calculate and output the estimated results
 #' of each strata.
+#' @export
 sep_reg_total <- function(Nh = NULL, Wh = NULL, N = NULL, nh, ybarh, xbarh,
                           sy2h, sx2h, syxh, Xbarh, beta_method = "reg_coef",
                           alpha = 0.05, betah0 = NULL, stra_est = FALSE){
@@ -693,12 +705,13 @@ sep_reg_total <- function(Nh = NULL, Wh = NULL, N = NULL, nh, ybarh, xbarh,
 #' @param sy2h a vector, the strata sample variance of the main variable y.
 #' @param sx2h a vector, the strata sample variance of the auxiliary variable x.
 #' @param syxh a vector, the strata sample covariance of y and x.
-#' @param Xbarh a number, the historical mean of the auxiliary variable x.
+#' @param Xbar a number, the historical mean of the auxiliary variable x.
 #' @param beta_method string, coefficient of auxiliary variables x in regression estimation.
 #' If choose "reg_coef", then the strata sample regression coefficient will be used.
 #' If choose "const", then \code{beta0} need be given and be used.
 #' @param alpha a number, the confidence level.
 #' @param beta0 a number.
+#' @export
 com_reg_mean <- function(Nh = NULL, Wh = NULL, N = NULL, nh, ybarh, xbarh,
                          sy2h, sx2h, syxh, Xbar, beta_method = "reg_coef",
                          alpha = 0.05, beta0 = NULL){
@@ -755,12 +768,13 @@ com_reg_mean <- function(Nh = NULL, Wh = NULL, N = NULL, nh, ybarh, xbarh,
 #' @param sy2h a vector, the strata sample variance of the main variable y.
 #' @param sx2h a vector, the strata sample variance of the auxiliary variable x.
 #' @param syxh a vector, the strata sample covariance of y and x.
-#' @param Xbarh a number, the historical mean of the auxiliary variable x.
+#' @param Xbar a number, the historical mean of the auxiliary variable x.
 #' @param beta_method string, coefficient of auxiliary variables x in regression estimation.
 #' If choose "reg_coef", then the strata sample regression coefficient will be used.
 #' If choose "const", then \code{beta0} need be given and be used.
 #' @param alpha a number, the confidence level.
 #' @param beta0 a number.
+#' @export
 com_reg_total <- function(Nh = NULL, Wh = NULL, N = NULL, nh, ybarh, xbarh,
                           sy2h, sx2h, syxh, Xbar, beta_method = "reg_coef",
                           alpha = 0.05, beta0 = NULL){

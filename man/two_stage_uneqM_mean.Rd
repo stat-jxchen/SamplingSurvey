@@ -4,7 +4,7 @@
 \alias{two_stage_uneqM_mean}
 \title{Estimate Population Mean Under Two-Stage Sampling}
 \usage{
-two_stage_uneqM_mean(M0, M2i, mi, n, ybari, s2i, N = Inf, alpha = 0.05)
+two_stage_uneqM_mean(M0, M2i, mi, ybari, s2i, N = Inf, alpha = 0.05)
 }
 \arguments{
 \item{M0}{a number, the number of secondary units in population.}

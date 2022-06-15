@@ -10,6 +10,7 @@
 #' @param s2h a vector, the strata sample variance of the second phase sample.
 #' @param N a number, the population size.
 #' @param alpha a number, the confidence level.
+#' @export
 twophase_stra_mean <- function(nh1, nh2, ybarh, s2h, N = Inf, alpha = 0.05){
   n1 <- sum(nh1)
   wh1 <- nh1/n1
@@ -41,6 +42,7 @@ twophase_stra_mean <- function(nh1, nh2, ybarh, s2h, N = Inf, alpha = 0.05){
 #' @param s2h a vector, the strata sample variance of the second phase sample.
 #' @param N a number, the population size.
 #' @param alpha a number, the confidence level.
+#' @export
 twophase_stra_total <- function(nh1, nh2, ybarh, s2h, N, alpha = 0.05){
   n1 <- sum(nh1)
   wh1 <- nh1/n1
@@ -82,6 +84,7 @@ twophase_stra_total <- function(nh1, nh2, ybarh, s2h, N, alpha = 0.05){
 #' @param syx a number, the sample covariance of y and x in the second phase sample.
 #' @param N a number, the population size.
 #' @param alpha a number, the confidence level.
+#' @export
 twophase_ratio_mean <- function(n1, n2, xbar1, ybar, xbar, sx2, sy2, syx,
                                 N = Inf, alpha = 0.05){
   ratio_est <- ybar/xbar
@@ -123,6 +126,7 @@ twophase_ratio_mean <- function(n1, n2, xbar1, ybar, xbar, sx2, sy2, syx,
 #' @param syx a number, the sample covariance of y and x in the second phase sample.
 #' @param N a number, the population size.
 #' @param alpha a number, the confidence level.
+#' @export
 twophase_ratio_total <- function(n1, n2, xbar1, ybar, xbar, sx2, sy2, syx,
                                 N, alpha = 0.05){
   ratio_est <- ybar/xbar
@@ -148,9 +152,10 @@ twophase_ratio_total <- function(n1, n2, xbar1, ybar, xbar, sx2, sy2, syx,
 #' This function is an auxiliary function which can extract the sample mean, sample variance and sample covariance of the
 #' main variable y and the auxiliary variable x.
 #'
-#' @param yxsamplea matrix or dataframe, which have two columns. One for y,
+#' @param yxsample matrix or dataframe, which have two columns. One for y,
 #' another for x.
 #' @param yloc a number, the location of y column in the dataframe.
+#' @export
 extract_srs_yxsample <- function(yxsample,yloc){
   ysample <- yxsample[[yloc]]
   xsample <- yxsample[,-yloc][[1]]

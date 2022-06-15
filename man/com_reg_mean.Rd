@@ -40,6 +40,8 @@ If it is be provided, then \code{Wh} and \code{N} can be ignored.}
 
 \item{syxh}{a vector, the strata sample covariance of y and x.}
 
+\item{Xbar}{a number, the historical mean of the auxiliary variable x.}
+
 \item{beta_method}{string, coefficient of auxiliary variables x in regression estimation.
 If choose "reg_coef", then the strata sample regression coefficient will be used.
 If choose "const", then \code{beta0} need be given and be used.}
@@ -47,8 +49,6 @@ If choose "const", then \code{beta0} need be given and be used.}
 \item{alpha}{a number, the confidence level.}
 
 \item{beta0}{a number.}
-
-\item{Xbarh}{a number, the historical mean of the auxiliary variable x.}
 }
 \description{
 This function estimates the population mean using the combined regression estimator.

@@ -5,7 +5,7 @@ Authors@R: c(
     person(given = "Jiaxiang",
            family = "Chen",
            role = c("aut", "cre"),
-           email = "Stat.JiaxiangChen@gmail.com")
+           email = "Stat.JiaxiangChen@gmail.com"))
 Maintainer: JiaXiang Chen <Stat.JiaxiangChen@gmail.com>
 Description: Package contains some data and functions that 
     are used in my sampling survey course.

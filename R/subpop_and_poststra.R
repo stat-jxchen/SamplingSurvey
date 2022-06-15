@@ -7,6 +7,7 @@
 #' @param N a number, the size of the entire population.
 #' @param alpha a number, the confidence level.
 #' @note This function is for the data that have origin data.
+#' @export
 srs_subpop_mean1 <- function(y_sub, n, N = Inf, alpha = 0.05){
   f <- n/N
   n_sub <- length(y_sub)
@@ -33,6 +34,7 @@ srs_subpop_mean1 <- function(y_sub, n, N = Inf, alpha = 0.05){
 #' @param N a number, the size of the entire population.
 #' @param alpha a number, the confidence level.
 #' @note This function is for the data that have origin data.
+#' @export
 srs_subpop_total1 <- function(y_sub, n, N, alpha = 0.05){
   f <- n/N
   n_sub <- length(y_sub)
@@ -66,6 +68,7 @@ srs_subpop_total1 <- function(y_sub, n, N, alpha = 0.05){
 #' @param alpha a number, the confidence level.
 #' @note This function is for the data that only have some information from the
 #' origin data.
+#' @export
 srs_subpop_mean2 <- function(ybar_sub, s2_sub, n_sub, n, N = Inf,
                              alpha = 0.05){
   f <- n/N
@@ -94,6 +97,7 @@ srs_subpop_mean2 <- function(ybar_sub, s2_sub, n_sub, n, N = Inf,
 #' @param alpha a number, the confidence level.
 #' @note This function is for the data that only have some information from the
 #' origin data.
+#' @export
 srs_subpop_total2 <- function(ybar_sub, s2_sub, n_sub, n, N, alpha = 0.05){
   f <- n/N
   p_sub <- n_sub/n
@@ -123,6 +127,7 @@ srs_subpop_total2 <- function(ybar_sub, s2_sub, n_sub, n, N, alpha = 0.05){
 #' @param s2h a vector, the sample variance of each strata.
 #' @param N a number, the population size.
 #' @param alpha a number, the confidence level.
+#' @export
 poststra_mean <- function(Wh, nh, ybarh, s2h, N = Inf, alpha = 0.05){
   n <- sum(nh)
   f <- n/N
@@ -150,6 +155,7 @@ poststra_mean <- function(Wh, nh, ybarh, s2h, N = Inf, alpha = 0.05){
 #' @param s2h a vector, the sample variance of each strata.
 #' @param N a number, the population size.
 #' @param alpha a number, the confidence level.
+#' @export
 poststra_total <- function(Wh, nh, ybarh, s2h, N, alpha = 0.05){
   n <- sum(nh)
   f <- n/N

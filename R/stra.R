@@ -12,6 +12,7 @@
 #' @param alpha a number, the confidence level.
 #' @param stra_est logical, whether to calculate and output the estimated results
 #' of each strata.
+#' @export
 stra_srs_mean <- function(Nh = NULL,Wh = NULL,N = NULL,nh,ybarh,s2h,
                                alpha = 0.05,stra_est = FALSE){
   condition <- c(is.null(Nh),is.null(Wh),is.null(N))
@@ -66,7 +67,8 @@ stra_srs_mean <- function(Nh = NULL,Wh = NULL,N = NULL,nh,ybarh,s2h,
 #' \code{stra_srs_prop}, which is used to extract some information from the sample.
 #'
 #' @param sample_data a list, each element denotes a strata sample.
-#' @param type string, "mean" for \code{stra_srs_mean}，"prop" for \code{stra_srs_prop}.
+#' @param type string, "mean" for \code{stra_srs_mean}, "prop" for \code{stra_srs_prop}.
+#' @export
 stra_sample_extract <- function(sample_data,type = "mean"){
   nh <- sapply(sample_data, length)
   if(type == "mean"){
@@ -92,9 +94,10 @@ stra_sample_extract <- function(sample_data,type = "mean"){
 #'
 #' @param pop_data a list, each element denotes a strata population.
 #' @param n a number, the sample size one wishes.
-#' @param w a vector, the allocation proportion of each stratum sample. It will be normalized.
+#' @param wh a vector, the allocation proportion of each stratum sample. It will be normalized.
 #' If it is not given, then the function will use proportional allocation.
 #' @note Since there is rounding error, the final sample size may not be \code{n}.
+#' @export
 stra_sample_generate <- function(pop_data,n,wh = NULL){
   stra_num <- length(pop_data)
   Nh <- map_int(pop_data,nrow)
@@ -126,6 +129,7 @@ stra_sample_generate <- function(pop_data,n,wh = NULL){
 #' @param alpha a number, the confidence level.
 #' @param stra_est logical, whether to calculate and output the estimated results
 #' of each strata.
+#' @export
 stra_srs_prop <- function(Nh = NULL,Wh = NULL,N = NULL,nh,ph,
                                alpha = 0.05,stra_est = FALSE){
   condition <- c(is.null(Nh),is.null(Wh),is.null(N))
@@ -192,6 +196,7 @@ stra_srs_prop <- function(Nh = NULL,Wh = NULL,N = NULL,nh,ph,
 #' allocation, "Opt" denotes optimal allocation, "Neyman" demotes Neyman allocation.
 #' @param type string, the type of the parameter to be estimated,
 #' "mean" for population mean and "prop" for population proportion.
+#' @export
 stra_allocation <- function(Nh,S2h = NULL,Ph = NULL,ch = NULL,n,
                             allocation,type = "mean"){
   # proportional allocation requires only Nh
@@ -248,6 +253,7 @@ stra_allocation <- function(Nh,S2h = NULL,Ph = NULL,ch = NULL,n,
 #' allocation, "Opt" denotes optimal allocation, "Neyman" demotes Neyman allocation.
 #' @param type string, the type of the parameter to be estimated,
 #' "mean" for population mean and "prop" for population proportion.
+#' @export
 stra_size <- function(Nh,Wh = NULL,varh_his = NULL,mean_his = NULL,
                       Ph_his,ch = NULL,P_his = NULL,method,bound,
                       alpha = 0.05,allocation,type = "mean"){

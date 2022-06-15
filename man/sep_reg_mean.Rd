@@ -49,11 +49,11 @@ If choose "const", then \code{beta0} need be given and be used.}
 
 \item{alpha}{a number, the confidence level.}
 
+\item{betah0}{a number or a vector. If the coefficient for each stata is the
+same, then can just input a number.}
+
 \item{stra_est}{logical, whether to calculate and output the estimated results
 of each strata.}
-
-\item{beta0}{a number or a vector. If the coefficient for each stata is the
-same, then can just input a number.}
 }
 \description{
 This function estimates the population mean using the separate regression estimator.
